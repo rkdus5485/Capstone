@@ -1,0 +1,61 @@
+package com.example.piechart;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.os.Bundle;
+
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.BaseDataSet;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    PieChart pieChart;
+    int[]colorArray=new int[]{Color.RED, Color.BLUE, Color.DKGRAY};
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        pieChart = findViewById(R.id.pieChart);
+        
+
+        pieChart.setDrawEntryLabels(true);
+        pieChart.setUsePercentValues(true);
+
+
+
+        PieDataSet pieDataSet = new PieDataSet(data1(), "지출내역");
+        pieDataSet.setColors(colorArray);
+
+        PieData pieData = new PieData((pieDataSet));
+
+        pieChart.setData(pieData);
+        pieChart.invalidate();
+
+        pieData.setValueTextSize(20);
+        pieChart.setCenterTextSize (15);
+        pieChart.setHoleRadius(15);
+    }
+
+    private ArrayList<PieEntry> data1() {
+        ArrayList<PieEntry> datavalue = new ArrayList<>();
+
+        datavalue.add(new PieEntry(30, "쇼핑, 뷰티"));
+        datavalue.add(new PieEntry(50, "식사"));
+        datavalue.add(new PieEntry(70, "교통"));
+
+        return datavalue;
+    }
+
+
+
+
+}
