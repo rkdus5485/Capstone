@@ -13,14 +13,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
 public class Task extends AsyncTask<String, Void, String> {
-    String clientKey = "#########################";;
     private String str, receiveMsg;
-    private final String ID = "########";
 
     @Override
     protected String doInBackground(String... params) {
@@ -31,10 +28,10 @@ public class Task extends AsyncTask<String, Void, String> {
             String ran = Integer.toString(rand.nextInt(9));
             numStr += ran;
         }
-        String header = "Bearer"+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiIxMTAwNzY0MTQ4Iiwic2NvcGUiOlsiaW5xdWlyeSIsImxvZ2luIiwidHJhbnNmZXIiXSwiaXNzIjoiaHR0cHM6Ly93d3cub3BlbmJhbmtpbmcub3Iua3IiLCJleHAiOjE2MTAwMDg5NTIsImp0aSI6IjMxYjdlYzBhLTNmMzAtNGY1YS1hYTNmLTYxNmYzN2ZkNTQ4NCJ9.PGaL5-msMOf1-58rJyipxnIRBbts0FXqB5DamAcEnAU";
+        String header = "Bearer"+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiIxMTAwNzY0MDIyIiwic2NvcGUiOlsiaW5xdWlyeSIsImxvZ2luIiwidHJhbnNmZXIiXSwiaXNzIjoiaHR0cHM6Ly93d3cub3BlbmJhbmtpbmcub3Iua3IiLCJleHAiOjE2MDk5OTQzODcsImp0aSI6IjY2MTgzYjg3LTEyNTUtNDcwMi1iMDEwLTY2MzUzNDlmMTc5OCJ9.O6UnAju-wZkbywcvHe0GVlSxTkFuGODpY137DnGMMhw";
         URL url = null;
         try {
-            url = new URL("https://testapi.openbanking.or.kr/v2.0/account/transaction_list/fin_num?bank_tran_id=T991663580U"+numStr+"&fintech_use_num=199166358057887322605491&inquiry_type=A&inquiry_base=D&from_date=20190101&to_date=20190919&sort_order=D&tran_dtime=20201009180000");
+            url = new URL("https://testapi.openbanking.or.kr/v2.0/account/transaction_list/fin_num?bank_tran_id=T991663280U"+numStr+"&fintech_use_num=199166328057887381558426&inquiry_type=A&inquiry_base=D&from_date=20190101&to_date=20201007&sort_order=D&tran_dtime=20201006025351");
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
