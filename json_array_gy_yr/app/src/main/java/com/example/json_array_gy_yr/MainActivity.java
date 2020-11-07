@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 }else if((Integer.parseInt(s_end)>Integer.parseInt(p_start))||(Integer.parseInt(s_start)>Integer.parseInt(p_start))){
                     Toast myToast = Toast.makeText(getApplicationContext(),"오늘 이전의 날짜를 선택하시오.", Toast.LENGTH_SHORT);
                     myToast.show();
-                }
+                }else{
 
                 String resultText1 ="";
                 String resultText2 ="";
@@ -153,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 culture_sum.setText(resultCultureSum);
                 traffic_sum.setText(resultTrafficSum);
                 other_sum.setText(resultOtherSum);
+            }
             }
         });
     }
