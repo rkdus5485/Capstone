@@ -1,6 +1,5 @@
-package com.example.yr;
+package com.example.app_ny;
 
-import android.support.v7.app.AppCompatActivity;
 
 import android.accessibilityservice.FingerprintGestureController;
 import android.app.DatePickerDialog;
@@ -14,6 +13,8 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -97,9 +98,9 @@ public class SubActivity extends AppCompatActivity {
                 } else if ((Integer.parseInt(s_end) > Integer.parseInt(p_start)) || (Integer.parseInt(s_start) > Integer.parseInt(p_start))) {
                     Toast myToast = Toast.makeText(getApplicationContext(), "오늘 이전의 날짜를 선택하시오.", Toast.LENGTH_SHORT);
                     myToast.show();
-                }
+                } else{
 
-                String resultText1 = "";
+                    String resultText1 = "";
                 String resultText2 = "";
                 String resultText3 = "";
                 String resultText4 = "";
@@ -151,7 +152,9 @@ public class SubActivity extends AppCompatActivity {
                 traffic_sum.setText(resultTrafficSum);
                 other_sum.setText(resultOtherSum);
             }
+            }
         });
+    
     }
 
     public void InitializeView() {
