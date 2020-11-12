@@ -35,6 +35,8 @@ public class SubActivity extends AppCompatActivity {
     public String s_day;
     public String e_day;
 
+
+
     public int foodsum = 0;
     public int shopsum = 0;
     public int lifesum = 0;
@@ -61,11 +63,44 @@ public class SubActivity extends AppCompatActivity {
     public TextView traffic_sum;
     public TextView other_sum;
 
+    public String end_ym;
+    public String select_ym;
+    public String select_year;
+    public String select_month;
+    Button btnYearMonthPicker;
+
+    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            Log.d("YearMonthPickerTest", "year= "+year+", month= "+month);
+
+
+            select_year = String.valueOf(year);
+            select_month = String.valueOf(month);
+            if(select_month.length()==1){
+                select_month="0"+select_month;
+            }
+            select_ym = select_year+select_month;
+
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frag1);
+
+        btnYearMonthPicker = findViewById(R.id.btn_year_month_picker);
+        btnYearMonthPicker.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                MyYearMonthPicker pd = new MyYearMonthPicker();
+                pd.setListener(d);
+                pd.show(getSupportFragmentManager(), "YearMonthPickerTest");
+            }
+        });
+
         context = this;
 
         this.InitializeListener();

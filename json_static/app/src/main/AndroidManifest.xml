@@ -18,8 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--안녕-->
+        <activity android:name=".Splash"
+            android:theme ="@style/Theme.AppCompat">
+        </activity>
         <activity android:name=".SubActivity"
             tools:ignore="Instantiatable"/>
+
     </application>
 
 </manifest>

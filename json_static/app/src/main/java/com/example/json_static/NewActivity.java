@@ -2,7 +2,6 @@ package com.example.json_static;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,8 +19,13 @@ public class NewActivity {
 
     public static class Task1 extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
+
         String start = ((SubActivity) SubActivity.context).s_start;
         String end = ((SubActivity) SubActivity.context).s_end;
+        String start_ym = ((SubActivity) SubActivity.context).select_ym;
+        String end_ym = ((SubActivity) SubActivity.context).end_ym;
+
+
 
         @Override
         protected String doInBackground(String... params) {
@@ -189,6 +193,7 @@ public class NewActivity {
 
                     a[i]=tran_type;
                     d[i]=tran_date;
+
 
                     if(Integer.parseInt(start)<=Integer.parseInt(d[i])&&Integer.parseInt(end)>=Integer.parseInt(d[i])){
                         result += a[i] + "\n";}
@@ -389,7 +394,7 @@ public class NewActivity {
 
     }
 
-    static class Task2 extends AsyncTask<String, Void, String> {
+    public static class Task2 extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
         String end = ((SubActivity) SubActivity.context).s_end;
@@ -539,9 +544,11 @@ public class NewActivity {
             String after_balance_amt = null;
             String branch_name = null;
             String result ="";
+
             int sum = 0;
             String[] a = new String[100];
             String[] b = new String[100];
+            String[] d = new String[100];
 
 
             String[] arraysum = new String[1];
@@ -561,15 +568,23 @@ public class NewActivity {
 
                     a[i] = tran_type;
                     b[i] = tran_amt;
-                    if(a[i].contains("식비")){
-                        sum += Integer.parseInt(b[i]);
+                    d[i] = tran_date;
+
+                    if(Integer.parseInt(start)<=Integer.parseInt(d[i])&&Integer.parseInt(end)>=Integer.parseInt(d[i])){
+                        if(a[i].contains("식비")){
+                            sum += Integer.parseInt(b[i]);
+                        }
                     }
+
+
                 }
                 result =  Integer.toString(sum);
+
             }catch (JSONException e){
                 e.printStackTrace();
             }
             return result;
+
         }
 
     }
@@ -634,6 +649,7 @@ public class NewActivity {
             int sum = 0;
             String[] a = new String[100];
             String[] b = new String[100];
+            String[] d = new String[100];
 
 
             String[] arraysum = new String[1];
@@ -653,9 +669,13 @@ public class NewActivity {
 
                     a[i] = tran_type;
                     b[i] = tran_amt;
-                    if(a[i].contains("쇼핑")){
-                        sum += Integer.parseInt(b[i]);
+                    d[i] = tran_date;
+                    if(Integer.parseInt(start)<=Integer.parseInt(d[i])&&Integer.parseInt(end)>=Integer.parseInt(d[i])){
+                        if(a[i].contains("쇼핑")){
+                            sum += Integer.parseInt(b[i]);
+                        }
                     }
+
                 }
                 result =  Integer.toString(sum);
             }catch (JSONException e){
@@ -725,6 +745,7 @@ public class NewActivity {
             int sum = 0;
             String[] a = new String[100];
             String[] b = new String[100];
+            String[] d = new String[100];
 
 
             String[] arraysum = new String[1];
@@ -744,8 +765,11 @@ public class NewActivity {
 
                     a[i] = tran_type;
                     b[i] = tran_amt;
-                    if(a[i].contains("생활")){
-                        sum += Integer.parseInt(b[i]);
+                    d[i] = tran_date;
+                    if(Integer.parseInt(start)<=Integer.parseInt(d[i])&&Integer.parseInt(end)>=Integer.parseInt(d[i])){
+                        if(a[i].contains("생활")){
+                            sum += Integer.parseInt(b[i]);
+                        }
                     }
                 }
                 result =  Integer.toString(sum);
@@ -801,6 +825,7 @@ public class NewActivity {
 
 
             return listjsonParser(receiveMsg);
+
         }
 
         public String listjsonParser(String jsonString) {
@@ -816,6 +841,7 @@ public class NewActivity {
             int sum = 0;
             String[] a = new String[100];
             String[] b = new String[100];
+            String[] d = new String[100];
 
 
             String[] arraysum = new String[1];
@@ -835,8 +861,11 @@ public class NewActivity {
 
                     a[i] = tran_type;
                     b[i] = tran_amt;
-                    if(a[i].contains("문화/여가")){
-                        sum += Integer.parseInt(b[i]);
+                    d[i] = tran_date;
+                    if(Integer.parseInt(start)<=Integer.parseInt(d[i])&&Integer.parseInt(end)>=Integer.parseInt(d[i])){
+                        if(a[i].contains("문화/여가")){
+                            sum += Integer.parseInt(b[i]);
+                        }
                     }
                 }
                 result =  Integer.toString(sum);
@@ -908,6 +937,7 @@ public class NewActivity {
             int sum = 0;
             String[] a = new String[100];
             String[] b = new String[100];
+            String[] d = new String[100];
 
 
             String[] arraysum = new String[1];
@@ -927,14 +957,19 @@ public class NewActivity {
 
                     a[i] = tran_type;
                     b[i] = tran_amt;
-                    if(a[i].contains("교통")){
-                        sum += Integer.parseInt(b[i]);
+                    d[i] = tran_date;
+                    if(Integer.parseInt(start)<=Integer.parseInt(d[i])&&Integer.parseInt(end)>=Integer.parseInt(d[i])){
+                        if(a[i].contains("교통")){
+                            sum += Integer.parseInt(b[i]);
+
+                        }
                     }
                 }
                 result =  Integer.toString(sum);
             }catch (JSONException e){
                 e.printStackTrace();
             }
+
             return result;
         }
 
@@ -1000,6 +1035,7 @@ public class NewActivity {
             int sum = 0;
             String[] a = new String[100];
             String[] b = new String[100];
+            String[] d = new String[100];
 
 
             String[] arraysum = new String[1];
@@ -1019,8 +1055,11 @@ public class NewActivity {
 
                     a[i] = tran_type;
                     b[i] = tran_amt;
-                    if(a[i].contains("기타")){
-                        sum += Integer.parseInt(b[i]);
+                    d[i] = tran_date;
+                    if(Integer.parseInt(start)<=Integer.parseInt(d[i])&&Integer.parseInt(end)>=Integer.parseInt(d[i])) {
+                        if (a[i].contains("기타")) {
+                            sum += Integer.parseInt(b[i]);
+                        }
                     }
                 }
                 result =  Integer.toString(sum);
