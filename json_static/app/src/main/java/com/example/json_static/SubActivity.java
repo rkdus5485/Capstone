@@ -14,6 +14,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
@@ -90,6 +91,8 @@ public class SubActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frag1);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         btnYearMonthPicker = findViewById(R.id.btn_year_month_picker);
         btnYearMonthPicker.setOnClickListener(new View.OnClickListener(){
