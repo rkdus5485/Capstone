@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, Splash.class);
+        Intent intent = new Intent(this, SplashActivity.class);
         startActivity(intent);
 
         Button button = (Button) findViewById(R.id.sub);

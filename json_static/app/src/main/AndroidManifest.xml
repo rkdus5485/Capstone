@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Json_static">
+        <activity android:name=".SplashActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +22,6 @@
             </intent-filter>
         </activity>
         <!--안녕-->
-        <activity android:name=".Splash"
-            android:theme ="@style/Theme.AppCompat">
-        </activity>
         <activity android:name=".SubActivity"
             tools:ignore="Instantiatable"/>
 
