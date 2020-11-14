@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     public static final int sub = 1001;
+    public static final int sub2 = 1002;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SubActivity.class);
-                startActivityForResult(intent, sub);
+                startActivity(intent);
+            }
+        });
+
+        Button button2 = (Button) findViewById(R.id.sub2);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SubActivity2.class);
+                startActivity(intent);
             }
         });
     }

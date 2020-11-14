@@ -24,6 +24,8 @@
         <!--안녕-->
         <activity android:name=".SubActivity"
             tools:ignore="Instantiatable"/>
+        <activity android:name=".SubActivity2"
+            tools:ignore="Instantiatable"/>
 
     </application>
 

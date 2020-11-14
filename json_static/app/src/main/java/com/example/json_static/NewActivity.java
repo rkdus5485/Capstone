@@ -22,10 +22,6 @@ public class NewActivity {
 
         String start = ((SubActivity) SubActivity.context).s_start;
         String end = ((SubActivity) SubActivity.context).s_end;
-        String start_ym = ((SubActivity) SubActivity.context).select_ym;
-        String end_ym = ((SubActivity) SubActivity.context).end_ym;
-
-
 
         @Override
         protected String doInBackground(String... params) {
@@ -111,8 +107,6 @@ public class NewActivity {
         }
 
     }
-
-
     public static class Task3 extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -207,7 +201,6 @@ public class NewActivity {
         }
 
     }
-
     public static class Task4 extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -300,7 +293,6 @@ public class NewActivity {
         }
 
     }
-
     public static class Task5 extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -393,7 +385,6 @@ public class NewActivity {
         }
 
     }
-
     public static class Task2 extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -486,7 +477,6 @@ public class NewActivity {
         }
 
     }
-
     public static class Food extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -588,7 +578,6 @@ public class NewActivity {
         }
 
     }
-
     public static class Shop extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -876,7 +865,6 @@ public class NewActivity {
         }
 
     }
-
     public static class Traffic extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -974,7 +962,6 @@ public class NewActivity {
         }
 
     }
-
     public static class Other extends AsyncTask<String, Void, String> {
         private String str, receiveMsg;
         String start = ((SubActivity) SubActivity.context).s_start;
@@ -1068,8 +1055,6 @@ public class NewActivity {
             }
             return result;
         }
-
     }
-
 
 }

@@ -98,59 +98,60 @@ public class SubActivity extends AppCompatActivity {
                 } else if ((Integer.parseInt(s_end) > Integer.parseInt(p_start)) || (Integer.parseInt(s_start) > Integer.parseInt(p_start))) {
                     Toast myToast = Toast.makeText(getApplicationContext(), "오늘 이전의 날짜를 선택하시오.", Toast.LENGTH_SHORT);
                     myToast.show();
+                } else {
+
+                    String resultText1 = "";
+                    String resultText2 = "";
+                    String resultText3 = "";
+                    String resultText4 = "";
+                    String resultText5 = "";
+                    String resultFoodSum = "";
+                    String resultShopSum = "";
+                    String resultLifeSum = "";
+                    String resultCultureSum = "";
+                    String resultTrafficSum = "";
+                    String resultOtherSum = "";
+
+
+                    try {
+                        resultText1 = new NewActivity.Task1().execute().get();
+                        resultText2 = new NewActivity.Task2().execute().get();
+                        resultText3 = new NewActivity.Task3().execute().get();
+                        resultText4 = new NewActivity.Task4().execute().get();
+                        resultText5 = new NewActivity.Task5().execute().get();
+
+                        resultFoodSum = new NewActivity.Food().execute().get();
+                        foodsum = Integer.parseInt(resultFoodSum);
+                        resultShopSum = new NewActivity.Shop().execute().get();
+                        shopsum = Integer.parseInt(resultShopSum);
+                        resultLifeSum = new NewActivity.Life().execute().get();
+                        lifesum = Integer.parseInt(resultLifeSum);
+                        resultCultureSum = new NewActivity.Culture().execute().get();
+                        culturesum = Integer.parseInt(resultCultureSum);
+                        resultTrafficSum = new NewActivity.Traffic().execute().get();
+                        trafficsum = Integer.parseInt(resultTrafficSum);
+                        resultOtherSum = new NewActivity.Other().execute().get();
+                        othersum = Integer.parseInt(resultOtherSum);
+
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+
+                    list_trandate.setText(resultText1);
+                    list_inout_type.setText(resultText2);
+                    list_tran_type.setText(resultText3);
+                    list_print_content.setText(resultText4);
+                    list_tran_amt.setText(resultText5);
+                    food_sum.setText(resultFoodSum);
+                    shop_sum.setText(resultShopSum);
+                    life_sum.setText(resultLifeSum);
+                    culture_sum.setText(resultCultureSum);
+                    traffic_sum.setText(resultTrafficSum);
+                    other_sum.setText(resultOtherSum);
                 }
-
-                String resultText1 = "";
-                String resultText2 = "";
-                String resultText3 = "";
-                String resultText4 = "";
-                String resultText5 = "";
-                String resultFoodSum = "";
-                String resultShopSum = "";
-                String resultLifeSum = "";
-                String resultCultureSum = "";
-                String resultTrafficSum = "";
-                String resultOtherSum = "";
-
-
-                try {
-                    resultText1 = new NewActivity.Task1().execute().get();
-                    resultText2 = new NewActivity.Task2().execute().get();
-                    resultText3 = new NewActivity.Task3().execute().get();
-                    resultText4 = new NewActivity.Task4().execute().get();
-                    resultText5 = new NewActivity.Task5().execute().get();
-
-                    resultFoodSum = new NewActivity.Food().execute().get();
-                    foodsum = Integer.parseInt(resultFoodSum);
-                    resultShopSum = new NewActivity.Shop().execute().get();
-                    shopsum = Integer.parseInt(resultShopSum);
-                    resultLifeSum = new NewActivity.Life().execute().get();
-                    lifesum = Integer.parseInt(resultLifeSum);
-                    resultCultureSum = new NewActivity.Culture().execute().get();
-                    culturesum = Integer.parseInt(resultCultureSum);
-                    resultTrafficSum = new NewActivity.Traffic().execute().get();
-                    trafficsum = Integer.parseInt(resultTrafficSum);
-                    resultOtherSum = new NewActivity.Other().execute().get();
-                    othersum = Integer.parseInt(resultOtherSum);
-
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-
-                list_trandate.setText(resultText1);
-                list_inout_type.setText(resultText2);
-                list_tran_type.setText(resultText3);
-                list_print_content.setText(resultText4);
-                list_tran_amt.setText(resultText5);
-                food_sum.setText(resultFoodSum);
-                shop_sum.setText(resultShopSum);
-                life_sum.setText(resultLifeSum);
-                culture_sum.setText(resultCultureSum);
-                traffic_sum.setText(resultTrafficSum);
-                other_sum.setText(resultOtherSum);
             }
         });
     }

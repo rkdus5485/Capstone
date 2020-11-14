@@ -64,45 +64,12 @@ public class SubActivity extends AppCompatActivity {
     public TextView traffic_sum;
     public TextView other_sum;
 
-    public String end_ym;
-    public String select_ym;
-    public String select_year;
-    public String select_month;
-    Button btnYearMonthPicker;
-
-    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            Log.d("YearMonthPickerTest", "year= "+year+", month= "+month);
-
-
-            select_year = String.valueOf(year);
-            select_month = String.valueOf(month);
-            if(select_month.length()==1){
-                select_month="0"+select_month;
-            }
-            select_ym = select_year+select_month;
-
-        }
-    };
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frag1);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-
-        btnYearMonthPicker = findViewById(R.id.btn_year_month_picker);
-        btnYearMonthPicker.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                MyYearMonthPicker pd = new MyYearMonthPicker();
-                pd.setListener(d);
-                pd.show(getSupportFragmentManager(), "YearMonthPickerTest");
-            }
-        });
 
         context = this;
 
@@ -125,7 +92,6 @@ public class SubActivity extends AppCompatActivity {
         traffic_sum = (TextView) findViewById(R.id.traffic_sum);
         other_sum = (TextView) findViewById(R.id.other_sum);
 
-
         btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,61 +102,65 @@ public class SubActivity extends AppCompatActivity {
                 } else if ((Integer.parseInt(s_end) > Integer.parseInt(p_start)) || (Integer.parseInt(s_start) > Integer.parseInt(p_start))) {
                     Toast myToast = Toast.makeText(getApplicationContext(), "오늘 이전의 날짜를 선택하시오.", Toast.LENGTH_SHORT);
                     myToast.show();
+                } else {
+
+                    String resultText1 = "";
+                    String resultText2 = "";
+                    String resultText3 = "";
+                    String resultText4 = "";
+                    String resultText5 = "";
+                    String resultFoodSum = "";
+                    String resultShopSum = "";
+                    String resultLifeSum = "";
+                    String resultCultureSum = "";
+                    String resultTrafficSum = "";
+                    String resultOtherSum = "";
+
+
+                    try {
+                        resultText1 = new NewActivity.Task1().execute().get();
+                        resultText2 = new NewActivity.Task2().execute().get();
+                        resultText3 = new NewActivity.Task3().execute().get();
+                        resultText4 = new NewActivity.Task4().execute().get();
+                        resultText5 = new NewActivity.Task5().execute().get();
+
+                        resultFoodSum = new NewActivity.Food().execute().get();
+                        foodsum = Integer.parseInt(resultFoodSum);
+                        resultShopSum = new NewActivity.Shop().execute().get();
+                        shopsum = Integer.parseInt(resultShopSum);
+                        resultLifeSum = new NewActivity.Life().execute().get();
+                        lifesum = Integer.parseInt(resultLifeSum);
+                        resultCultureSum = new NewActivity.Culture().execute().get();
+                        culturesum = Integer.parseInt(resultCultureSum);
+                        resultTrafficSum = new NewActivity.Traffic().execute().get();
+                        trafficsum = Integer.parseInt(resultTrafficSum);
+                        resultOtherSum = new NewActivity.Other().execute().get();
+                        othersum = Integer.parseInt(resultOtherSum);
+
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+
+                    list_trandate.setText(resultText1);
+                    list_inout_type.setText(resultText2);
+                    list_tran_type.setText(resultText3);
+                    list_print_content.setText(resultText4);
+                    list_tran_amt.setText(resultText5);
+                    food_sum.setText(resultFoodSum);
+                    shop_sum.setText(resultShopSum);
+                    life_sum.setText(resultLifeSum);
+                    culture_sum.setText(resultCultureSum);
+                    traffic_sum.setText(resultTrafficSum);
+                    other_sum.setText(resultOtherSum);
                 }
-
-                String resultText1 = "";
-                String resultText2 = "";
-                String resultText3 = "";
-                String resultText4 = "";
-                String resultText5 = "";
-                String resultFoodSum = "";
-                String resultShopSum = "";
-                String resultLifeSum = "";
-                String resultCultureSum = "";
-                String resultTrafficSum = "";
-                String resultOtherSum = "";
-
-
-                try {
-                    resultText1 = new NewActivity.Task1().execute().get();
-                    resultText2 = new NewActivity.Task2().execute().get();
-                    resultText3 = new NewActivity.Task3().execute().get();
-                    resultText4 = new NewActivity.Task4().execute().get();
-                    resultText5 = new NewActivity.Task5().execute().get();
-
-                    resultFoodSum = new NewActivity.Food().execute().get();
-                    foodsum = Integer.parseInt(resultFoodSum);
-                    resultShopSum = new NewActivity.Shop().execute().get();
-                    shopsum = Integer.parseInt(resultShopSum);
-                    resultLifeSum = new NewActivity.Life().execute().get();
-                    lifesum = Integer.parseInt(resultLifeSum);
-                    resultCultureSum = new NewActivity.Culture().execute().get();
-                    culturesum = Integer.parseInt(resultCultureSum);
-                    resultTrafficSum = new NewActivity.Traffic().execute().get();
-                    trafficsum = Integer.parseInt(resultTrafficSum);
-                    resultOtherSum = new NewActivity.Other().execute().get();
-                    othersum = Integer.parseInt(resultOtherSum);
-
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-
-                list_trandate.setText(resultText1);
-                list_inout_type.setText(resultText2);
-                list_tran_type.setText(resultText3);
-                list_print_content.setText(resultText4);
-                list_tran_amt.setText(resultText5);
-                food_sum.setText(resultFoodSum);
-                shop_sum.setText(resultShopSum);
-                life_sum.setText(resultLifeSum);
-                culture_sum.setText(resultCultureSum);
-                traffic_sum.setText(resultTrafficSum);
-                other_sum.setText(resultOtherSum);
             }
         });
+
+
+
     }
 
     public void InitializeView() {

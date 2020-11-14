@@ -14,14 +14,15 @@
         android:layout_margin="8dp">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="300dp"
+            >
 
             <ImageView
                 android:id="@+id/image"
-                android:src="@drawable/card"
-                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/card" />
 
             <TextView
                 android:id="@+id/title"

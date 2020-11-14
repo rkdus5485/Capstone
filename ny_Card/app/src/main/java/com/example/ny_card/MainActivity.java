@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Integer[] colors_temp = {
                 getResources().getColor(R.color.color1),
                 getResources().getColor(R.color.color2),
-                getResources().getColor(R.color.color3),
+                getResources().getColor(R.color.color3)
 
         };
         colors = colors_temp;

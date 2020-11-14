@@ -62,8 +62,88 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
+        <TextView
+            android:id="@+id/food_label"
+            android:gravity="center_horizontal"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="식비"/>
+        <TextView
+            android:id="@+id/food_sum"
+            android:gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/shop_label"
+            android:gravity="center_horizontal"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="쇼핑"/>
+        <TextView
+            android:id="@+id/shop_sum"
+            android:gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
 
+        <TextView
+            android:id="@+id/life_label"
+            android:gravity="center_horizontal"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="생활"/>
+        <TextView
+            android:id="@+id/life_sum"
+            android:gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
+        <TextView
+            android:id="@+id/culture_label"
+            android:gravity="center_horizontal"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="문화/여가"/>
+        <TextView
+            android:id="@+id/culture_sum"
+            android:gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
 
+        <TextView
+            android:id="@+id/traffic_label"
+            android:gravity="center_horizontal"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="교통"/>
+        <TextView
+            android:id="@+id/traffic_sum"
+            android:gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/other_label"
+            android:gravity="center_horizontal"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="기타"/>
+        <TextView
+            android:id="@+id/other_sum"
+            android:gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -138,88 +218,5 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/food_label"
-            android:gravity="center_horizontal"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="식비"/>
-        <TextView
-            android:id="@+id/food_sum"
-            android:gravity="center_horizontal"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/shop_label"
-            android:gravity="center_horizontal"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="쇼핑"/>
-        <TextView
-            android:id="@+id/shop_sum"
-            android:gravity="center_horizontal"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/life_label"
-            android:gravity="center_horizontal"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="생활"/>
-        <TextView
-            android:id="@+id/life_sum"
-            android:gravity="center_horizontal"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/culture_label"
-            android:gravity="center_horizontal"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="문화/여가"/>
-        <TextView
-            android:id="@+id/culture_sum"
-            android:gravity="center_horizontal"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/traffic_label"
-            android:gravity="center_horizontal"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="교통"/>
-        <TextView
-            android:id="@+id/traffic_sum"
-            android:gravity="center_horizontal"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/other_label"
-            android:gravity="center_horizontal"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="기타"/>
-        <TextView
-            android:id="@+id/other_sum"
-            android:gravity="center_horizontal"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+
 </LinearLayout>
