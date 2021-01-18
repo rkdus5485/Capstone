@@ -41,4 +41,4 @@
 #### 소비 통계
 - 통계를 보고 싶은 달을 선택하여 조회를 누르면 막대 그래프 형식으로 가장 많은 소비를 했던 구분이 어디인지 시각적으로 확인 가능
 <img src ="https://user-images.githubusercontent.com/45381907/104887155-2e3f1600-59ae-11eb-9ca4-3e0ca9c98e15.png" width="300">
-<img src ="https://user-images.githubusercontent.com/45381907/104887156-2e3f1600-59ae-11eb-9921-2b73124521ef.png" width="300">
+<img src ="https://user-images.githubusercontent.com/45381907/104887151-2d0de900-59ae-11eb-9c9a-f3cba2de62f3.png" width="300">
