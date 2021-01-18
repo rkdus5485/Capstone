@@ -29,8 +29,10 @@
 - 조회하고 싶은 날짜 기간을 선택 하고 조회를 누르면 json 형태로 받아온 데이터를 list 형태로 바꾸어 조회 가능
   - 기본 구성
   <img src = "https://user-images.githubusercontent.com/45381907/104887009-ff28a480-59ad-11eb-9827-ae63f3db83ed.png" width="300">
+  /n
   - 날짜 선택
   <img src ="https://user-images.githubusercontent.com/45381907/104887007-fdf77780-59ad-11eb-99e9-50f01e0fc8a3.png" width="300">
+  /n
   - 조회 결과
   <img src = "https://user-images.githubusercontent.com/45381907/104887153-2da67f80-59ae-11eb-955a-5fa4374e09a6.png" width="300">
   
